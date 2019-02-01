@@ -1,3 +1,5 @@
+require 'date'
+
 class Task < Post
 	def initialize
 		super
@@ -5,6 +7,11 @@ class Task < Post
 	end
 
 	def read_from_console
+		p "what need?"
+		@text = STDIN.gets.chomp
+		p "k data"
+		input = STDIN.gets.chomp
+		@due_data = Date.parse(input)
 	end
 
 	def to_strings
