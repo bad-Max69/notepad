@@ -14,5 +14,7 @@ class Link < Post
 	end
 
 	def to_strings
+		time_string = "CCreate: #{@created_at.strftime("%Y.%m.%d, %H.%m.")}"
+		return [@url, @text, time_string]
 	end
 end
