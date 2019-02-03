@@ -5,18 +5,17 @@ require_relative 'task'
 
 p 'hi'
 
-choises = Post.post_types
+choices = Post.post_types
 
-choises = -1
+choice = -1
 
-until choises >= 0 && choises < choises.size
-	choises.each_with_index {|type, index | puts "t #{index}, #{type}"}
-
+unless choice >= 0 && choice < choices.size
+	choices.each_with_index {|type, index | puts "t #{index}, #{type}"}
 end
-	choises = STDIN.gets.chomp
 
-entry = Post.create(choises)
+choice = STDIN.gets.chomp
+
+entry = Post.create(choice)
 entry.read_from_console
 entry.save
-
 p 'ok'
