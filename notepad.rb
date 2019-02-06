@@ -9,11 +9,12 @@ choices = Post.post_types
 
 choice = -1
 
-unless choice >= 0 && choice < choices.size
+until choice >= 0 && choice < choices.size
 	choices.each_with_index {|type, index | puts "t #{index}, #{type}"}
+	choice = STDIN.gets.to_i
+
 end
 
-choice = STDIN.gets.chomp
 
 entry = Post.create(choice)
 entry.read_from_console
